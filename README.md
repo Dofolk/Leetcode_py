@@ -5,6 +5,6 @@
   * mutable變數：set, dictionary, list
   * 可以參考https://medium.com/starbugs/python-%E4%B8%80%E6%AC%A1%E6%90%9E%E6%87%82-pass-by-value-pass-by-reference-%E8%88%87-pass-by-sharing-1873a2c6ac46
   * 或是看參考資料/python_assignment.pdf
-* 在定義class的時候， __init__ 裡面寫的東西就是一個最這個class的初始化(記得都要self.xxx)，可以在class裡面通用，所有操作都可以對它做，也可以知道說現在這個class裡面有包含哪些東西
+* 在定義class的時候， \__init__ 裡面寫的東西就是一個最這個class的初始化(記得都要self.xxx)，可以在class裡面通用，所有操作都可以對它做，也可以知道說現在這個class裡面有包含哪些東西
   * 像是 link list的話，這裡面就會有兩個值 self.val 跟 self.next ，代表說一個是存值一個是下一個點是誰
   * 或是假設要建立出 list 的話，這裡就直接 self.ls = [] ，這樣就可以建立一個名為 ls 的 list在這個 class 裡面來用
