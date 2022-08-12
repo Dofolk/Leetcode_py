@@ -14,6 +14,9 @@ class Solution:
                 s[p1], s[p2] = s[p2], s[p1]
                 p1 += 1
                 p2 -= 1
+            elif s[p1] not in T and s[p2] not in T:
+                p1 += 1
+                p2 -= 1
             elif s[p1] not in T:
                 p1 += 1
             elif s[p2] not in T:
