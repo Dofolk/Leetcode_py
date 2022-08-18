@@ -9,3 +9,6 @@
   * 像是 link list的話，這裡面就會有兩個值 self.val 跟 self.next ，代表說一個是存值一個是下一個點是誰
   * 或是假設要建立出 list 的話，這裡就直接 self.ls = [] ，這樣就可以建立一個名為 ls 的 list在這個 class 裡面來用
 * 在做數字操作的時候可以不用太擔心數值的上限，像是 2^31 2^32等等的，python 都可以去吃數值，不像 C/C++ 每個宣告的變數都有其數值的上限
+* 459題，KMP算法就是把兩個字串做比對，看看能比對多長，有一樣就繼續加1，沒有的話就用 while 來降低
+  * 參考 https://www.evanlin.com/about-kmp/
+  * https://zh.wikipedia.org/zh-tw/KMP%E7%AE%97%E6%B3%95
