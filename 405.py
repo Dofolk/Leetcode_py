@@ -3,7 +3,7 @@
 
 class Solution:
     def toHex(self, num: int) -> str:
-        d = "0123456789abcedf"
+        d = "0123456789abcdef"
         s = ''
         if num == 0:
             return "0"
