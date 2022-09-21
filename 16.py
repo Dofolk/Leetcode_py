@@ -22,3 +22,33 @@ class Solution:
                     m = abs(target - s)
                     
         return val
+# 2
+class Solution:
+    def threeSumClosest(self, nums: List[int], target: int) -> int:
+        nums.sort()
+        m = float('inf')
+        start = 0
+        end = len(nums) - 1
+        
+        while start < end:
+            l = start + 1
+            r = end - 1
+            m_tmp = float('inf')
+            while l <= r:
+                mid = (l+r)//2
+                s = nums[start] + nums[mid] + nums[end]
+                if abs(target - s) < abs(target - m_tmp):
+                    m_tmp = s
+                if s > target:
+                    r = mid - 1
+                else:
+                    l = mid + 1
+            
+            if abs(target - m_tmp) < abs(target - m):
+                m = m_tmp
+            if m_tmp > target:
+                end -= 1
+            else:
+                start += 1
+        
+        return m
