@@ -12,3 +12,6 @@
 * 459題，KMP算法就是把兩個字串做比對，看看能比對多長，有一樣就繼續加1，沒有的話就用 while 來降低
   * 參考 https://www.evanlin.com/about-kmp/
   * https://zh.wikipedia.org/zh-tw/KMP%E7%AE%97%E6%B3%95
+* 208題，Trie是用字母做成tree形式的搜尋法(想法就是一層一層疊起來就對了)
+  * 參考 https://zh.wikipedia.org/zh-tw/Trie
+  * https://ithelp.ithome.com.tw/articles/10248152
