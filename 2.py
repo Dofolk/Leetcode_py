@@ -1,7 +1,7 @@
 # 這題是要做把兩個 link list 做相加，而 link list 為個位數、十位數、百位數...等依序連結下去
 # 所以就是需要一個 carry 來記錄看看有沒有進位，然後再往下操作
 # 這邊有使用到說，當 list1 跟 list2 沒東西的時候就是直接給值為0，可以不用去考慮長度問題
-# 然後需要額外宣告一個 list 來記錄結果，這樣會比較好操作，不然如果把其中一個 list 當成最後要回傳的結果會非常不好操作
+# 然後需要額外宣告一個 list 來記錄結果，因為題目要求要回傳ListNode
 
 # Definition for singly-linked list.
 # class ListNode:
