@@ -7,6 +7,8 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+# Solution 1
 class Solution:
     val = float('inf')
     dep = 0
@@ -23,3 +25,20 @@ class Solution:
         dfs(root, self.dep)
 
         return self.val if self.dep > 0 else root.val
+
+# Solution 2
+class Solution:
+    def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
+        queue = deque([root])
+        leftmost_val = None
+
+        while queue:
+            node = queue.popleft()
+            
+            leftmost_val = node.val
+            if node.right:
+                queue.append(node.right)
+            if node.left:
+                queue.append(node.left)
+        
+        return leftmost_val
