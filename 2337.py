@@ -7,6 +7,7 @@
 class Solution:
     def canChange(self, start: str, target: str) -> bool:
         idx1, L = len(start) - 1, len(target)
+        # check the order of the letter L and R, it must be same
         if start.replace('_', '') != target.replace('_', ''):
             return False
         
