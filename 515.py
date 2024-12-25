@@ -49,3 +49,28 @@ class Solution:
         
         dfs(root, 0)
         return res
+
+# Solution 3 BFS
+class Solution:
+    def largestValues(self, root: Optional[TreeNode]) -> List[int]:
+        ans = []
+        q = deque()
+        q.append(root)
+
+        if not root:
+            return []
+        
+        while q:
+            n = len(q)
+            M = float('-inf')
+            
+            for _ in range(n):
+                node = q.popleft()
+                M = max(M, node.val)
+                
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+            ans.append(M)
+        return ans
