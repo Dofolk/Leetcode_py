@@ -4,12 +4,14 @@
 # 這邊還要先做一個預先處理，既然知道說要找的是 sum + target，所以可以測試 sum + target mod 2 有沒有餘數，理論上來說不應該有餘數出現
 # 還可以確認一下說有沒有未達目標，全 '+' 或全 '-' 的情況下達不到目標也可以先刪掉了
 # 在DP的第一步就是值為 0 的時候，是有 1 種方法可以填滿空間為 0 的背包，所以 DP 最一開始就是 1
+# DP 的想法跟做法就是我從 target 往前去找，對於每個從 list 裡面出來的數字，從 target這個位置往前去找
+# 代表著說我拿出來的這個屬字可以在哪幾個位置有作用，可以往前把之前的組合數量往後加上來
 
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
         S = sum(nums)
 
-        if S < abs(target) or (S + target) & 1:
+        if S < abs(target) or (S + target) & 1: # if S < abs(target) or (S + target) % 2
             return 0
 
         target = (target + S)//2
