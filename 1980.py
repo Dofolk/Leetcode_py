@@ -12,3 +12,11 @@ class Solution:
         for idx in range(m):
             if record[idx] == 0:
                 return format(idx, 'b').zfill(len(nums))
+
+# 一行解法
+# Cantor's diagonal argument，剛好題目給的限制是一個 n x n 的字串方陣
+# 對於每個字串相對應位置的 01 紀錄相反的，這樣就可以達到一定不會重複，而且也沒有出現過的數字
+
+class Solution:
+    def findDifferentBinaryString(self, nums: List[str]) -> str:
+        return "".join(["1" if nums[idx][idx] == "0" else "0" for idx in range(len(nums))])
