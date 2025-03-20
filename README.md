@@ -38,6 +38,7 @@
   * 如果不同的話就把其中一個併入，下面有簡單版本的 code 可以參考
   * find 的設計就是自己紀錄的老大就是自己的話就回傳，不是的話就 recursive 去找最終boss 是誰
 ```
+# n = point nums
 _record = list(range(n))
 def find(idx):
     if _record[idx] == idx:
