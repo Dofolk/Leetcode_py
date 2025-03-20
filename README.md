@@ -36,7 +36,16 @@
   * 需要的東西有紀錄每個端點老大的 list
   * 有了 list 之後就可以開始找兩個端點進來做，首先透過 find 來找端點目前的老大是誰，如果兩個端點的老大都一樣，那就在記錄用 list 裡面記好說同個群的
   * 如果不同的話就把其中一個併入，下面有簡單版本的 code 可以參考
+  * find 的設計就是自己紀錄的老大就是自己的話就回傳，不是的話就 recursive 去找最終boss 是誰
 ```
-saf
+_record = list(range(n))
+def find(idx):
+    if _record[idx] == idx:
+        return idx
+    return find(_record[idx])
+def union(point1, point2):
+    boss1, boss2 = find(point1), find(point2)
+    if boss1 != boss2:
+        _record[boss1] = boss2
 ```
 * TBD
