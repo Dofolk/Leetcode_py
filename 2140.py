@@ -14,7 +14,21 @@
 # 反面想的話也是同理，指示由後往前去累積，當下位置(idx)如果沒有後面位置(later = idx + 跳過次數 + 1) 可以累積
 # 就直接把 idx + 1 往前遞補，跟正面來的不選擇是一樣的
 
-# === Code ===
+# === Code 正面 ===
+
+class Solution:
+    def mostPoints(self, questions: List[List[int]]) -> int:
+        L = len(questions)
+        record = [0] * (L + 1)
+        
+        for idx in range(L):
+            val, dis = questions[idx]
+            record[idx + 1] = max(record[idx], record[idx + 1])
+            next_idx = min(idx + dis + 1, L)
+            record[next_idx] = max(record[next_idx], record[idx] + val)
+        return record[L]
+
+# === Code 反面 ===
 
 class Solution:
     def mostPoints(self, questions: List[List[int]]) -> int:
