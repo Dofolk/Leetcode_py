@@ -49,4 +49,5 @@ def union(point1, point2):
     if boss1 != boss2:
         _record[boss1] = boss2
 ```
+* Fenwick Tree (影片連結:https://www.youtube.com/watch?v=WbafSgetDDk)
 * TBD
