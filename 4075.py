@@ -9,17 +9,24 @@
 # 然後再從小的質數開始累積並儲存遇到的質數，超過目標或是 n 的時候再回傳值就好了
 
 # Method 1 - Directly Check
-class Solution:
-    def threeFibonacciSum(self, n: int) -> bool:
-        v1, v2, v3 = 0, 1, 1
-        curr = 2
-        for _ in range(n):
-            if curr == n:
-                return True
-            elif curr > n:
-                return False
-            curr -= v1
-            v1, v2, v3 = v2, v3, v2 + v3
-            curr += v3
+primes = list()
+seen = set()
+for val in range(2, 10 ** 6):
+    if val in seen:
+        continue
+    primes.append(val)
+    seen.add(val)
+    for multi_val in range(val, 10 ** 6, val):
+        seen.add(multi_val)
 
-        return False
+class Solution:
+    def maxPrimes(self, n: int, s: int) -> list[int]:
+        curr = []
+        curr_sum = 0
+        for val in primes:
+            curr_sum += val
+            if val > n or curr_sum > s:
+                break
+            curr.append(val)
+
+        return curr
