@@ -4,6 +4,7 @@
   # sum + m * (n-1) = target * n，因為可以知道說最一開始的和加上後面走的步數增加的數值一定會等於目標值乘上總長度
   # target = min + m，最小值如果要到目標的話一定就是要每次走的時候都要被加到
 # 所以把第二式代入第一式的話就可以得到 m = sum - min * n，也就是最終結果
+# 20261102 Note: 這邊取 min 是因為選擇 min 的話可以保證所有數字都可以加到目標，選其他的數字(非 min)就會有至少一個比它小(真正的 min)的數字不保證能達到目標
 
 class Solution:
     def minMoves(self, nums: List[int]) -> int:
